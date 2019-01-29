@@ -1,0 +1,2 @@
+rootProject.name = 'reactive-perf-test'
+include "imperative", "imperative-jetty", "reactive", "perf", "common"
