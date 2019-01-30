@@ -14,13 +14,8 @@ class ReactiveController {
 
     @GetMapping("/item")
     Mono<Item> getItem() {
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return Mono.just(new Item("Hello world"));
+        return Mono.just(new Item("Hello world"))
+                .delaySubscription(Duration.ofMillis(500));
     }
 
 }

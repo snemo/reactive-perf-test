@@ -13,3 +13,7 @@ dependencies {
 }
 
 ext['netty.version'] = '4.0.51.Final'
+
+gatling {
+    simulations = [ 'com.nuxplanet.gatling.reactive.ReactiveSimulation' ]
+}

@@ -24,8 +24,12 @@ repositories {
 
 dependencies {
     compile project(':common')
-    
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootRun {
+    jvmArgs = ['-Xmx2048m']
 }

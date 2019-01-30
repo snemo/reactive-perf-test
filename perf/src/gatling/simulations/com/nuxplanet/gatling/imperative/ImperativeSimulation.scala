@@ -1,12 +1,11 @@
-package com.nuxplanet.gatling.reactive
+package com.nuxplanet.gatling.imperative
 
 import com.nuxplanet.gatling.BaseSimulation
 
-class ReactiveSimulation extends BaseSimulation{
+class ImperativeSimulation extends BaseSimulation {
   scenarioName = "reactive"
   numberOfUsers = 1000
-  url = "http://localhost:8090"
+  url = "http://localhost:8080"
   action = "/reactive/item"
 
-  run()
 }
