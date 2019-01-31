@@ -1,21 +1,24 @@
-package com.nuxplanet.imperative;
+package com.nuxplanet.reactive;
 
 import com.nuxplanet.common.Item;
-import com.nuxplanet.common.ItemImperativeRepository;
+import com.nuxplanet.common.ItemReactiveRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+import java.time.Duration;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/imperative")
-class ImperativeController {
+@RequestMapping("/reactive")
+class ReactiveController {
 
-    private final ItemImperativeRepository repository;
+    private final ItemReactiveRepository repository;
 
     @GetMapping("/item")
-    Item getItem() {
+    Mono<Item> getItem() {
         return repository.getItem();
     }
 }

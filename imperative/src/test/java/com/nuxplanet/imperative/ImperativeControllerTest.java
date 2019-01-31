@@ -23,5 +23,4 @@ public class ImperativeControllerTest {
                 .andExpect(status().isOk());
 
     }
-
 }
