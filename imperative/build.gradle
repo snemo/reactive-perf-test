@@ -10,6 +10,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.google.cloud.tools.jib' version '1.0.0'
+}
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -31,5 +35,18 @@ dependencies {
 }
 
 bootRun {
-    jvmArgs = ['-Xmx2048m']
+    jvmArgs = ['-Xmx1024m']
+}
+
+jib {
+    from {
+        image = "openjdk:8-jdk-alpine"
+    }
+    to {
+        image = "509029984649.dkr.ecr.eu-central-1.amazonaws.com/imperative"
+    }
+    container {
+        jvmFlags = ['-Xmx1024m', '-Dserver.port=8081']
+        ports = ['8081']
+    }
 }
