@@ -7,15 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/imperative")
 @AllArgsConstructor
 class ImperativeController {
 
-    private final ItemImperativeRepository itemImperativeRepository;
+    private final ItemImperativeRepository repository;
 
     @GetMapping("/item")
     Item getItem() {
-        return itemImperativeRepository.getItem();
+        return repository.getItem();
+    }
+
+    @GetMapping("/items")
+    List<Item> getItems() {
+        return repository.getLotOfItems();
     }
 }

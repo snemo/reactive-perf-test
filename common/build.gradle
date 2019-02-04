@@ -5,4 +5,8 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.0'
     compile 'io.projectreactor:reactor-core:3.2.5.RELEASE'
     compile 'org.springframework:spring-context:5.1.4.RELEASE'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+    testImplementation 'io.projectreactor:reactor-test:3.2.5.RELEASE'
 }

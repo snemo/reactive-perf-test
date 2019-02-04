@@ -24,4 +24,13 @@ public class ReactiveControllerTests {
                 .isEqualTo(new Item("Hello world"));
 
     }
+
+    @Test
+    public void will_get_lot_of_items() {
+        webClient.get().uri("/reactive/items")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(Item.class)
+                .hasSize(100);
+    }
 }

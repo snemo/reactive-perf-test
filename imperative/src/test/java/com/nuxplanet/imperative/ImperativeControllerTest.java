@@ -23,4 +23,11 @@ public class ImperativeControllerTest {
                 .andExpect(status().isOk());
 
     }
+
+    @Test
+    public void will_get_lot_of_items() throws Exception {
+        mockMvc.perform(get("/imperative/items"))
+                .andExpect(status().isOk());
+
+    }
 }

@@ -7,6 +7,7 @@ import lombok.Value;
 @Value
 public class Item {
     private final String value;
+    private final byte[] load = new byte[1024];
 
     @JsonCreator
     public Item(@JsonProperty("value") String value) {
