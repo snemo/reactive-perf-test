@@ -16,6 +16,7 @@ gatling {
     simulations = [
             'com.nuxplanet.gatling.reactive.ReactiveOneItemSim',
             'com.nuxplanet.gatling.reactive.ReactiveManyItemsSim',
+            'com.nuxplanet.gatling.reactive.ReactiveManyItemsBlockedSim',
             'com.nuxplanet.gatling.imperative.ImperativeOneItemSim',
             'com.nuxplanet.gatling.imperative.ImperativeManyItemsSim'
     ]

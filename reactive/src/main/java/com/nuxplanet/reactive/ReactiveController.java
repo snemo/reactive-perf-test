@@ -26,4 +26,8 @@ class ReactiveController {
         return repository.getLotOfItems();
     }
 
+    @GetMapping("/items/blocked")
+    Flux<Item> getItemsBlocking() {
+        return repository.getItemsBlocking();
+    }
 }

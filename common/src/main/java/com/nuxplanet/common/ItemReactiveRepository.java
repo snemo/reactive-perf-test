@@ -22,4 +22,14 @@ public class ItemReactiveRepository {
                 .map(i -> new Item("Item " + i)))
                 .delaySubscription(Duration.ofMillis(DELAY));
     }
+
+    public Flux<Item> getItemsBlocking() {
+        try {
+            Thread.sleep(DELAY);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return Flux.fromStream(IntStream.range(0, 100).boxed()
+                .map(i -> new Item("Item " + i)));
+    }
 }

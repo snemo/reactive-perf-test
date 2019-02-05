@@ -4,9 +4,9 @@ import io.gatling.http.Predef._
 import io.gatling.core.Predef._
 
 class ManyItemsSimulation extends Simulation {
-  var scenarioName = "oneItem"
+  var scenarioName = "manyItems"
   var numberOfUsers = 1000
-  var rampDuration = 1
+  var rampDuration = 3
   var url = "http://localhost:8080"
   var action = "/reactive/item"
 
